@@ -1,0 +1,16 @@
+{
+  "description": "Local CSV validation contract; not an official organizer schema. Extra metadata columns are allowed. Rows preserve submission rank.",
+  "source": "https://proteinbase.com/competitions/anthropic-adaptyv-2026/challenges/egfr",
+  "checked_on": "2026-09-29",
+  "required_columns": ["name", "sequence", "molecule_class"],
+  "amino_acid_alphabet": "ACDEFGHIKLMNPQRSTVWY",
+  "molecule_classes": ["protein", "nanobody", "scfv", "fab_kappa", "fab_lambda"],
+  "fab_classes": ["fab_kappa", "fab_lambda"],
+  "fab_format": "VH:VL",
+  "length_limits": {"protein": {"min": 10, "max": 250}},
+  "antibody_length_policy": "Nonempty chains; no numeric limit inferred from the FAQ. Antibody annotation requires separate review.",
+  "max_candidates": 20,
+  "unique_fields": ["name", "sequence"],
+  "normalization": "None: uppercase sequences and exact case-sensitive unique names; reject surrounding name whitespace.",
+  "empty_policy": "Reject by default; allow a header-only scaffold with --allow-empty."
+}
