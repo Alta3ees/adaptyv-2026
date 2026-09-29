@@ -74,13 +74,16 @@ Diagnostics identify the affected CSV line. No command submits data.
 
 Open [`notebooks/01_environment.ipynb`](notebooks/01_environment.ipynb) in Colab
 (File → Upload notebook, or open it from your GitHub copy). Optionally select
-Runtime → Change runtime type → GPU. Run cells in order. On Colab, upload these
+Runtime → Change runtime type → GPU. Run cells in order. The first cell clones this repository into
+`/content/adaptyv-2026` if absent and changes into it; an existing checkout is not
+updated automatically. All future notebooks must start with this cell, as recorded
+in [`AGENTS.md`](AGENTS.md). If repository files cannot be found, upload these
 three repository files when prompted: `candidates.csv`, `candidates.schema.json`,
 and `validate_candidates.py`. They remain in temporary runtime storage.
 
 The notebook reports Python and NVIDIA GPU availability via `nvidia-smi`, reads
 and validates the CSV, and previews rows. CPU-only execution is sufficient for
-this step. Locally, open it in an existing Jupyter environment from the repository
+this step. Locally, skip the Colab bootstrap cell and open it in an existing Jupyter environment from the repository
 root or `notebooks/`; files are found automatically. The initial empty scaffold
 is explicitly permitted and reported. Set `ALLOW_EMPTY = False` once candidates
 exist. No packages or models are installed by the notebook.
